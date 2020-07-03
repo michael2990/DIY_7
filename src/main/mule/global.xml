@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+
+
+	<configuration-properties doc:name="Configuration properties" doc:id="ae6218a4-e291-4797-b1ff-bd03cf835da0" file="${env}-properties.yaml" />
+
+
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="ef6af8ef-0d5a-408b-9e39-a6e7226384e2" >
+		<http:listener-connection host="${http.host}" port="${http.port}" />
+	</http:listener-config>
+	<http:request-config name="American_HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="9c0c337f-8e03-419a-8d42-2999277e0f36" >
+		<http:request-connection host="${american.host}" port="${american.port}" />
+	</http:request-config>
+	<http:request-config name="Local_HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="27034bc4-c2e5-4963-8152-138740cfbe8f" >
+		<http:request-connection host="${http.host}" port="${http.port}" />
+	</http:request-config>
+	<global-property doc:name="Global Property" doc:id="5580ce13-6a3f-4d5c-b8a9-095d9948ee95" name="env" value="dev" />
+
+
+
+
+</mule>
